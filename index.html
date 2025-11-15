@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Rental System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <h1>Vehicle Rental System</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#vehicles">Vehicles</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="hero">
+        <h2>AK VEHICLE RENTAL'S</h2>
+        <p>Affordable · Fast · Reliable</p>
+        <button onclick="scrollToCategories()">Explore Vehicles</button>
+    </section>
+
+    <!-- Vehicle Categories -->
+    <section id="categories" class="category-section">
+        <h2>Categories</h2>
+        <div class="category-container">
+            <div class="category-card" onclick="filterVehicles('Car')">Cars</div>
+            <div class="category-card" onclick="filterVehicles('Bike')">Bikes</div>
+            <div class="category-card" onclick="filterVehicles('Scooter')">Scooter</div>
+            <div class="category-card" onclick="filterVehicles('Truck')">Trucks</div>
+        </div>
+    </section>
+
+    <!-- Vehicle Listing -->
+    <section id="vehicles">
+        <h2>Available Vehicles</h2>
+        <div id="vehicle-list" class="vehicle-list"></div>
+    </section>
+
+    <!-- Rent Confirmation Popup -->
+    <div id="rentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRentModal()">&times;</span>
+            <h2>Confirm Rental</h2>
+            <p id="rentVehicleName"></p>
+
+            <label>Your Name</label>
+            <input type="text" id="userName">
+
+            <label>Number of Days</label>
+            <input type="number" id="rentalDays" min="1">
+
+            <label>Total Cost</label>
+            <p id="totalCost"></p>
+
+            <button onclick="confirmRent()">Confirm Rental</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
